@@ -1,0 +1,23 @@
+{% extends 'owasp/base_layout.html' %}
+
+{% block content %}
+<h2>OWASP Video Watchlist</h2>
+
+    {% if latest_videos %}
+    <ul>
+        {% for video in latest_videos %}
+            <li>
+                <a href="{% url 'owasp:view_video' video.id %}">{{ video.videoTitle }}</a> -
+                Uploaded by: {{video.poster}}
+            </li>
+        {% endfor %}
+    </ul>
+        {% else %}
+            <p>No polls are available.</p>
+        {% endif %}
+    <br />
+
+    <form action="{% url 'owasp:add_video' %}">
+        <input type="submit" value="Post new video" />
+    </form>
+{% endblock %}

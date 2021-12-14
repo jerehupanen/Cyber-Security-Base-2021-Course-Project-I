@@ -1,0 +1,30 @@
+{% extends 'owasp/base_layout.html' %}
+{% block content %}
+<div class="view-video">
+    <h2>{{ video.videoTitle }}</h2>
+
+    <ul>
+        <li><b>Added by: </b> {{video.poster}}</li>
+        <li><b>Video link: </b><a href={{video.videoLink}}>{{video.videoLink}}</a></li>
+        <li><b>Post date: </b> {{video.date}}</li>
+    </ul>
+</div>
+
+<div class="comments">
+    <h2>Video feedback:</h2>
+    <ul>
+        {% for comment in comments %}
+            <p><strong>{{comment.poster}}:</strong> {{comment.comment}} </p>
+        {% endfor %}
+    </ul>
+</div>
+{% if user.is_authenticated %}
+<div class="add_feedback">
+    <form class="site-form" action="{% url 'owasp:view_video' video.id %}" method="post">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="Post comment on video">
+    </form>
+</div>
+{% endif %}
+{% endblock %}

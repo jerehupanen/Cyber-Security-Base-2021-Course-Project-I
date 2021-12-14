@@ -1,0 +1,9 @@
+{% extends 'owasp/base_layout.html' %}
+{% block content %}
+<h2>Signup</h2>
+<form class="site-form" action="{% url 'owasp:signup' %}" method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" Value="Signup">
+</form>
+{% endblock %}

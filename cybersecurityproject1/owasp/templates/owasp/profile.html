@@ -1,0 +1,17 @@
+{% extends 'owasp/base_layout.html' %}
+{% block content %}
+<h2>Profile</h2>
+<p><strong>Username: </strong>{{username}}</p>
+<p><strong>E-mail: </strong>{{profileInfo.email}}</p>
+<p><strong>Phone-number: </strong>{{profileInfo.phone}}</p>
+<br>
+<hr>
+<div class="add_profileinformation">
+    <h2>Update profile information:</h2>
+    <form class="site-form" action="{% url 'owasp:profile' username %}" method="post">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="Update profile information">
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+    background-color: #0f141f;
+    color: #fff;
+}
+
+body * {
+    font-family: 'Open Sans', 'Times New Roman', Times, serif;
+}
+
+body h1 a {
+    text-decoration: none;
+    color:greenyellow;
+    margin-left: 100px;
+}
+
+li a {
+    color: green;
+}
+
+.wrapper {
+    max-width: 970px;
+    margin: 0 auto;
+}
+
+div.wrapper h1 {
+    text-align: center;
+    margin: 100px auto;
+    font-size: 2.4em;
+}
+
+header {
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px 0;
+}
+
+.nav-bar {
+    margin-left: 100px;
+    display: flex;
+    justify-self: end;
+}
+
+.nav-bar ul li{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.nav-bar button {
+    background: none;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+    font-size: 1em;
+}
+
+.videos {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+}
+
+.view-video {
+    border: 1px solid #00dba0;
+    color: white;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.view-video h2 {
+    margin-left: 35px;
+    font-size: 1.2em;
+}
+
+.view-video ul {
+    list-style-type: none;
+}
+
+.site-form{
+    margin-top: 10px;
+    border: 1px solid #00dba0;
+    padding: 20px;
+}
+
+.site-form input, .site-form textarea, .site-form select{
+    display: block;
+    margin: 5px 0 15px 0;
+    padding: 10px;
+}
+
+a.highlight {
+    border: 1px solid #00dba0;
+    padding: 10px;
+    border-radius: 4px;
+    color: #00dba0;
+}
+
+.helptext, .helptext ul {
+    margin: 0 auto 20px;
+    color: #bbb;
+    font-size: 0.95em;
+    display: block;
+}
+
+.errorlist {
+    padding: 0;
+}
+
+.errorlist li{
+    padding: 10px;
+    list-style-type: none;
+    border: 1px solid #ff5721;
+    color: #ff5721;
+    margin: 10px 0;
+}
+
+.site-form input[type="submit"] {
+    background-color: #00dba0;
+    border: 0;
+    color: #fff;
+    font-size: 1.2em;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+.comments {
+    border: 1px solid #00dba0;
+}
+
+.comments h2 {
+    margin-left: 35px;
+}

@@ -1,0 +1,13 @@
+{% extends 'owasp/base_layout.html' %}
+
+{% block content %}
+<div class="add-video">
+<h2>Add a video to the list:</h2>
+
+<form class="site-form" action="{% url 'owasp:add_video' %}" method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Add video to watchlist">
+    </form>
+</div>
+    {% endblock %}
