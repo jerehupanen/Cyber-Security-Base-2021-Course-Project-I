@@ -6,7 +6,7 @@ I provided fixes for all the issues only in this text document below, not within
 
 While working on the website, I got a little excited and added some unnecessary extra functionality and pages that are not needed in testing and might have some flaws or bugs, but I made sure to provide fixes for all 5 flaws explained below.
 
-The repository can be found here: [GitHub Pages](https://pages.github.com/)
+The repository can be found here: https://github.com/jerehupanen/Cyber-Security-Base-2021-Course-Project-I/
 
 To use the website, extract the files and run the following command in your prompt of choice:
 ```
@@ -24,7 +24,7 @@ If you wish to use the Django admin interface to modify tables, go to the follow
 http://127.0.0.1:8000/admin/
 and login with Username: admin / Password: admin
 
-##FLAW 1: [Broken Access Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control/)
+## FLAW 1: [Broken Access Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control/)
 URL: http://127.0.0.1:8000/owasp/profile/admin
 Location in code: owasp/views.py (row 86, profile_view() function)
 
@@ -45,7 +45,7 @@ if request.user.username != username:
 ```
 This way you will not be able to view other peoples profile information, or submit forms on their behalf.
 
-##FLAW 2: [Identification and Authentication Failures](https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/)
+## FLAW 2: [Identification and Authentication Failures](https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/)
 URL: http://127.0.0.1:8000/owasp/signup/
 Location in code: owasp/forms.py (row 23, UserRegistrationForm())
 
@@ -69,7 +69,7 @@ def clean_password1(self): # add this part
 ```
 The validation rules/logic itself is already built into Django, we're just implementing it here in order to validate the password that was written in the form.
 
-##FLAW 3: [Insecure Design](https://owasp.org/Top10/A04_2021-Insecure_Design/)
+## FLAW 3: [Insecure Design](https://owasp.org/Top10/A04_2021-Insecure_Design/)
 Location in code: tests.py
 
 While this is not a specific flaw, being number 3 on the fresh OWASP list, I felt like it needed to be included here as well. The category discusses good design principles and testing within websites and their internal logic and user-interfaces. Alongside following best coding and security practices during development, insecure design is often a sideproduct of lackluster testing.
@@ -90,7 +90,7 @@ class ProfileInfoTests(TestCase):
         self.assertIs(profileInfo.has_at_sign(), True)
 ```
 
-##FLAW 4: [Security Logging and Monitoring Failures](https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/)
+## FLAW 4: [Security Logging and Monitoring Failures](https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/)
 URL: http://127.0.0.1:8000/owasp/profile/admin
 Location in code: settings.py & owasp/views.py
 
@@ -148,7 +148,7 @@ if form.is_valid():
 ```
 You can see any added logs in the owasp project folder in a file called 'security.log'. While it is still a local file, the file could be stored a secure server or even logged into a database if this were an actual website.
 
-##FLAW 5: [Vulnerable and Outdated Components](https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/)
+## FLAW 5: [Vulnerable and Outdated Components](https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/)
 Location: settings.py
 
 This one is sixth on the list and second in the community list, outdated libraries and applications can always have unexpected vulnerabilities and any outdated files and dependencies shoudl always be updated or deleted. Our app has an [outdated logging plugin] (https://github.com/maykinmedia/django-timeline-logger) that was last updated in 2018 and is no longer used in our project, so we should remove it.
