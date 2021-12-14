@@ -8,22 +8,22 @@ While working on the website, I got a little excited and added some unnecessary 
 
 The repository can be found here: https://github.com/jerehupanen/Cyber-Security-Base-2021-Course-Project-I/
 
-To use the website, extract the files and run the following command in your prompt of choice:
+To use the demo project, download and extract the project files and run the following command in your prompt of choice in the project root folder:
 ```
 python manage.py runserver
 ```
-The database should be included, but if it isn't working, run the following commands as well:
+The database should be included, but if it isn't working properly, run the following commands as well:
 ```
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-Once the server is running, navigate to the following url to access the homepage: http://127.0.0.1:8000/ (this should redirect you to http://127.0.0.1:8000/owasp)
+Once the server is running, navigate to the following URL to access the homepage: http://127.0.0.1:8000/ (this should redirect you to http://127.0.0.1:8000/owasp)
 
-If you wish to use the Django admin interface to modify tables, go to the following address:
+If you wish to use the Django admin interface to modify or add any database tables, go to the following address:
 http://127.0.0.1:8000/admin/
 
-You should be able to login with:
+You should be able to login to the admin interface as well as the [demo page login functionality](http://127.0.0.1:8000/owasp/login/) with:
 **Username:** admin
 **Password:** admin
 
